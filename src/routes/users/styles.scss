@@ -1,0 +1,23 @@
+.react-resizable {
+  position: relative;
+}
+
+.react-resizable-handle {
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  bottom: 0;
+  right: -5px;
+  cursor: col-resize;
+}
+
+.custom-filter-dropdown {
+  padding: 8px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+}
+
+.deleteRow{
+    background: #ff867c;
+}
