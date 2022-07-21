@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { message, Form, Icon, Upload, Modal } from 'antd';
+import { Form, Icon as LegacyIcon } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Upload, Modal } from 'antd';
 import { api } from '../api';
 import { config } from '../../../config';
 
@@ -304,7 +306,7 @@ class Imagenes extends React.Component {
         const { imageUrl } = this.state;
         const uploadButton = (
             <div>
-                <Icon type={this.state.loading ? 'loading' : 'plus'} />
+                <LegacyIcon type={this.state.loading ? 'loading' : 'plus'} />
                 <div className="ant-upload-text">Upload</div>
             </div>
         );

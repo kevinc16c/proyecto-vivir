@@ -1,6 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { message, Table, Breadcrumb, Icon, Input, Button, Dropdown, Menu, Modal, Col, Row } from 'antd';
+import {
+    CheckCircleOutlined,
+    EditOutlined,
+    EllipsisOutlined,
+    PlusOutlined,
+    StopOutlined,
+} from '@ant-design/icons';
+import { message, Table, Breadcrumb, Input, Button, Dropdown, Menu, Modal, Col, Row } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import { api } from './api';
 import Nuevo from './Nuevo';
@@ -56,23 +63,23 @@ class Lugares extends React.Component {
 					align: 'center',
 					render: (text, record) => {
 						return (
-							<Dropdown trigger={['click']} overlay={
+                            <Dropdown trigger={['click']} overlay={
 								<Menu>
-									<Menu.Item key="1" onClick={() => this.props.history.push("/admin/lugares/editar/"+record.idlugar)}><Icon type="edit" style={{ color: '#grey' }} />Editar</Menu.Item>
+									<Menu.Item key="1" onClick={() => this.props.history.push("/admin/lugares/editar/"+record.idlugar)}><EditOutlined style={{ color: '#grey' }} />Editar</Menu.Item>
 									{
 										record.estado === "B"
 											?
-											<Menu.Item key="2" onClick={() => this.showHabilitar(record.idlugar)}><Icon type="check-circle" style={{ color: '#73d13d' }} />Alta</Menu.Item>
+											<Menu.Item key="2" onClick={() => this.showHabilitar(record.idlugar)}><CheckCircleOutlined style={{ color: '#73d13d' }} />Alta</Menu.Item>
 											:
-											<Menu.Item key="4" onClick={() => this.showEstadoBaja(record.idlugar)}><Icon type="stop" style={{ color: 'red' }} />Baja</Menu.Item>
+											<Menu.Item key="4" onClick={() => this.showEstadoBaja(record.idlugar)}><StopOutlined style={{ color: 'red' }} />Baja</Menu.Item>
 									}
 								</Menu>
 							}>
 								<Button size="small">
-									<Icon type="ellipsis" />
+									<EllipsisOutlined />
 								</Button>
 							</Dropdown>
-						)
+                        );
 					},
 				}
 			],
@@ -217,7 +224,7 @@ class Lugares extends React.Component {
 	render() {
 		let columns = [...this.state.columns];
 		return (
-			<div className="container-fluid no-breadcrumb">
+            <div className="container-fluid no-breadcrumb">
 				<QueueAnim type="bottom" className="ui-animate">
 					<Breadcrumb>
 						<Breadcrumb.Item>Inicio</Breadcrumb.Item>
@@ -233,7 +240,7 @@ class Lugares extends React.Component {
 								<Col style={{ float: 'right' }} sm={{ span: 12 }} xs={{ span: 24 }}>
 									<Button
 										type="primary"
-										icon="plus"
+										icon={<PlusOutlined />}
 										onClick={() => this.props.history.push("/admin/lugares/nuevo")}
 										style={{ float: 'right' }}
 									>
@@ -298,7 +305,7 @@ class Lugares extends React.Component {
 					/>
 				}
 			</div>
-		);
+        );
 	}
 }
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Input, Form } from 'antd';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Input } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 const FormItem = Form.Item;
 const TextArea = Input.TextArea;

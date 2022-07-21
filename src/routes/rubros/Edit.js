@@ -1,7 +1,9 @@
 import React from 'react';
 import { api } from './api';
 import { connect } from 'react-redux';
-import { message, Modal, Form, Input, Row, Col, Divider, InputNumber } from 'antd';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Modal, Input, Row, Col, Divider, InputNumber } from 'antd';
 
 const FormItem = Form.Item;
 class Editar extends React.Component {

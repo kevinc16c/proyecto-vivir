@@ -1,7 +1,9 @@
 import React from 'react';
 import { api } from '../api';
 import { connect } from 'react-redux';
-import { message, Modal, Form, Row, Col, Divider, Table } from 'antd';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Modal, Row, Col, Divider, Table } from 'antd';
 import _ from 'lodash';
 import queryString from 'query-string';
 

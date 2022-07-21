@@ -1,7 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {api} from './api'
-import { Col, Row, Input, Divider, Form, Layout, Card, Button, message } from 'antd';
+import { SaveOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Col, Row, Input, Divider, Layout, Card, Button, message } from 'antd';
 import Header from '../../components/LayoutPrincipal/Header';
 import Footer from '../../components/LayoutPrincipal/Footer';
 const FormItem = Form.Item;
@@ -147,7 +150,7 @@ class Bases extends React.Component {
                                         </Col>
                                     </Row>
                                     <Divider />
-                                    <Button type="primary" htmlType="submit" icon="save"
+                                    <Button type="primary" htmlType="submit" icon={<SaveOutlined />}
                                         style={{ marginTop: 5, float: 'right', marginBottom: 10 }}
                                         onClick={this.handleSubmit}>
                                         Enviar

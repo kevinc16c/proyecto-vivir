@@ -2,7 +2,9 @@ import React from 'react';
 // import { api } from 'api';
 import { api } from './api';
 import { connect } from 'react-redux';
-import { message, PageHeader, Modal, Form, Input, Row, Col } from 'antd';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, PageHeader, Modal, Input, Row, Col } from 'antd';
 import './styles.scss'
 
 const FormItem = Form.Item;

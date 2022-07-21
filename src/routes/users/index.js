@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './styles.scss'
-import { message, Table, Breadcrumb, Icon, Input, Button, Dropdown, Menu, Modal } from 'antd';
+import { EllipsisOutlined, PlusOutlined } from '@ant-design/icons';
+import { message, Table, Breadcrumb, Input, Button, Dropdown, Menu, Modal } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import { Resizable } from 'react-resizable';
 import queryString from 'query-string';
@@ -65,29 +66,29 @@ class Users extends React.Component {
             width: 1,
             render: (text, record) => {
                 return (
-                <Dropdown trigger={['click']} overlay={
-                    <Menu>
-                        {this.props.user && utils.checkRol(1, this.props.user.roles) && !record.baja &&
-                            <Menu.Item key="1" onClick={()=>{
-                                this.setState({userUpdate: record, openEditar: true,})
-                            }}>Editar</Menu.Item>
-                        }
-                        {this.props.user && utils.checkRol(1, this.props.user.roles) && !record.baja &&
-                            <Menu.Item key="2" onClick={()=>this.showDeleteConfirm(record.id)}>Desactivar</Menu.Item>
-                        }
-                        {this.props.user && utils.checkRol(1, this.props.user.roles) && record.baja &&
-                            <Menu.Item key="2" onClick={()=>this.showActiveConfirm(record.id)}>Activar</Menu.Item>
-                        }
-                        {this.props.user && utils.checkRol(1,this.props.user.roles) && !record.baja &&
-                            <Menu.Item key="3" onClick={()=>this.openBlanquearClave(record)}>Blanqueo de Clave</Menu.Item>
-                        }
-                    </Menu>
-                }>
-                    <Button size="small">
-                        <Icon type="ellipsis" />
-                    </Button>
-                </Dropdown>
-            )
+                    <Dropdown trigger={['click']} overlay={
+                        <Menu>
+                            {this.props.user && utils.checkRol(1, this.props.user.roles) && !record.baja &&
+                                <Menu.Item key="1" onClick={()=>{
+                                    this.setState({userUpdate: record, openEditar: true,})
+                                }}>Editar</Menu.Item>
+                            }
+                            {this.props.user && utils.checkRol(1, this.props.user.roles) && !record.baja &&
+                                <Menu.Item key="2" onClick={()=>this.showDeleteConfirm(record.id)}>Desactivar</Menu.Item>
+                            }
+                            {this.props.user && utils.checkRol(1, this.props.user.roles) && record.baja &&
+                                <Menu.Item key="2" onClick={()=>this.showActiveConfirm(record.id)}>Activar</Menu.Item>
+                            }
+                            {this.props.user && utils.checkRol(1,this.props.user.roles) && !record.baja &&
+                                <Menu.Item key="3" onClick={()=>this.openBlanquearClave(record)}>Blanqueo de Clave</Menu.Item>
+                            }
+                        </Menu>
+                    }>
+                        <Button size="small">
+                            <EllipsisOutlined />
+                        </Button>
+                    </Dropdown>
+                );
             },
           }],
       }
@@ -242,7 +243,7 @@ class Users extends React.Component {
 
 
 
-                <Button type="primary" icon="plus"
+                <Button type="primary" icon={<PlusOutlined />}
                     style={{ marginTop:-25, float:'right' }}
                     onClick={()=>{
                     this.setState({openNuevo:true})

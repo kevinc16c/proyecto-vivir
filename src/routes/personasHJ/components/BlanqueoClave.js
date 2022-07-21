@@ -1,7 +1,10 @@
 import React from 'react';
 import { api } from '../api';
 import { connect } from 'react-redux';
-import { message, Modal, Form, Icon, Input } from 'antd';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Modal, Input } from 'antd';
 const FormItem = Form.Item;
 
 class ChangePassword extends React.Component {
@@ -56,7 +59,7 @@ class ChangePassword extends React.Component {
                 okText="Aceptar"
             >
                 <section className="form-v1-container">
-                <h1 style={{marginRight:'45%', marginLeft:'45%'}}><Icon type="user"/></h1>
+                <h1 style={{marginRight:'45%', marginLeft:'45%'}}><UserOutlined /></h1>
                     <h2>Asignar clave</h2>
                     <p className="lead"></p>
                     <Form className="form-v1">
@@ -65,14 +68,14 @@ class ChangePassword extends React.Component {
                                 initialValue: this.props.data && this.props.data.email,
                                 rules: [{ required: true, message: ' ' }],
                             })(
-                                <Input size="large" prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="Usuario" readOnly />
+                                <Input size="large" prefix={<UserOutlined style={{ fontSize: 13 }} />} placeholder="Usuario" readOnly />
                             )}
                         </FormItem>
                         <FormItem>
                             {getFieldDecorator('clave', {
                                 rules: [{ required: true, message: ' ' }],
                             })(
-                                <Input type="password" size="large" prefix={<Icon type="lock" style={{ fontSize: 13 }} />} placeholder="Clave" />
+                                <Input type="password" size="large" prefix={<LockOutlined style={{ fontSize: 13 }} />} placeholder="Clave" />
                             )}
                         </FormItem>
                     </Form>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { message, Switch, Modal, Col, Row, Icon, Spin, Button } from 'antd';
+import { QrcodeOutlined } from '@ant-design/icons';
+import { message, Switch, Modal, Col, Row, Spin, Button } from 'antd';
 import './styless.scss';
 import { api } from './api';
 import Nuevo from './Nuevo';
@@ -241,7 +242,7 @@ class Lugares extends React.Component {
 
 	render() {
 		return (
-			<div className="container-fluid no-breadcrumb">
+            <div className="container-fluid no-breadcrumb">
 				<Row >
 					<Col style={{ float: 'left' }} sm={{ span: 12 }} xs={{ span: 24 }}>
 						<h4 style={{ marginBottom: 15, display: 'inline-block' }}>{this.state.confirmLoading === false && 'Lugares'}</h4>
@@ -262,7 +263,7 @@ class Lugares extends React.Component {
 										<h6 className="card-subtitle mb-2 text-muted pb-5" style={{ fontSize: "14px" }}> <b>Localidad: </b>{data.nombrelocali}</h6>
 									</div>
 									<Button onClick={() => this.Qr(data.idlugar)} disabled={data.qrasignado === 1 ? false : true}>
-										Imprimir QR <Icon type="qrcode" />
+										Imprimir QR <QrcodeOutlined />
 									</Button>
 									<div style={{ float: "right" }}>
 										<Switch
@@ -304,7 +305,7 @@ class Lugares extends React.Component {
 					/>
 				}
 			</div>
-		);
+        );
 	}
 }
 

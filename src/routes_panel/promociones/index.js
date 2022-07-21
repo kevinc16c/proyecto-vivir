@@ -1,6 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { message, Table, Breadcrumb, Icon, Input, Button, Dropdown, Menu, Modal, Col, Row } from 'antd';
+import {
+    CheckCircleOutlined,
+    EditOutlined,
+    EllipsisOutlined,
+    PlusOutlined,
+    StopOutlined,
+} from '@ant-design/icons';
+import { message, Table, Breadcrumb, Input, Button, Dropdown, Menu, Modal, Col, Row } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import queryString from 'query-string';
 import { api } from './api';
@@ -58,23 +65,23 @@ class Promociones extends React.Component {
 					align: 'center',
 					render: (text, record) => {
 						return (
-							<Dropdown trigger={['click']} overlay={
+                            <Dropdown trigger={['click']} overlay={
 								<Menu>
-									<Menu.Item key="1" disabled={record.estado === "B"} onClick={() => this.setState({ openEditar: true, registro: record })}><Icon type="edit" style={{ color: '#grey' }} />Editar</Menu.Item>
+									<Menu.Item key="1" disabled={record.estado === "B"} onClick={() => this.setState({ openEditar: true, registro: record })}><EditOutlined style={{ color: '#grey' }} />Editar</Menu.Item>
 									{
 										record.estado === "B"
 											?
-											<Menu.Item key="2" onClick={() => this.showHabilitar(record.id)}><Icon type="check-circle" style={{ color: '#73d13d' }} />Alta</Menu.Item>
+											<Menu.Item key="2" onClick={() => this.showHabilitar(record.id)}><CheckCircleOutlined style={{ color: '#73d13d' }} />Alta</Menu.Item>
 											:
-											<Menu.Item key="4" onClick={() => this.showEstadoBaja(record.id)}><Icon type="stop" style={{ color: 'red' }} />Baja</Menu.Item>
+											<Menu.Item key="4" onClick={() => this.showEstadoBaja(record.id)}><StopOutlined style={{ color: 'red' }} />Baja</Menu.Item>
 									}
 								</Menu>
 							}>
 								<Button size="small">
-									<Icon type="ellipsis" />
+									<EllipsisOutlined />
 								</Button>
 							</Dropdown>
-						)
+                        );
 					},
 				}
 			],
@@ -234,7 +241,7 @@ class Promociones extends React.Component {
 		const id_user = this.props.user && this.props.user.id;
 		let columns = [...this.state.columns];
 		return (
-			<div className="container-fluid no-breadcrumb">
+            <div className="container-fluid no-breadcrumb">
 				<QueueAnim type="bottom" className="ui-animate">
 					<Breadcrumb>
 						<Breadcrumb.Item href={"#/panel/lugares/" + id_user}>Lugares</Breadcrumb.Item>
@@ -250,7 +257,7 @@ class Promociones extends React.Component {
 								<Col style={{ float: 'right' }} sm={{ span: 12 }} xs={{ span: 24 }}>
 									<Button
 										type="primary"
-										icon="plus"
+										icon={<PlusOutlined />}
 										onClick={() => this.setState({ openNuevo: true })}
 										style={{ float: 'right' }}
 									>
@@ -316,7 +323,7 @@ class Promociones extends React.Component {
 					/>
 				}
 			</div>
-		);
+        );
 	}
 }
 

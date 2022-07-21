@@ -1,6 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { message, Table, Breadcrumb, Icon, Input, Form, Button, AutoComplete, Spin, Modal, Col, Row, PageHeader, Divider, DatePicker, Statistic } from 'antd';
+import { DollarOutlined, InfoCircleOutlined, SearchOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import {
+    message,
+    Table,
+    Breadcrumb,
+    Input,
+    Button,
+    AutoComplete,
+    Spin,
+    Modal,
+    Col,
+    Row,
+    PageHeader,
+    Divider,
+    DatePicker,
+    Statistic,
+} from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import queryString from 'query-string';
 import { api } from './api';
@@ -315,7 +333,7 @@ class Viajes extends React.Component {
 			title: 'Atención',
 			content: '¿Emitir liquidación?',
 			okText: 'Emitir',
-			icon: 'info-circle',
+			icon: <InfoCircleOutlined />,
 			cancelText: 'Cancelar',
 			async onOk() {
 				_this.props.form.setFieldsValue({
@@ -485,7 +503,7 @@ class Viajes extends React.Component {
 			onChange: this.onSelectChange,
 		};
 		return (
-			<div className="container-fluid no-breadcrumb">
+            <div className="container-fluid no-breadcrumb">
 				<QueueAnim type="bottom" className="ui-animate">
 					<Breadcrumb>
 						<Breadcrumb.Item>Inicio</Breadcrumb.Item>
@@ -539,7 +557,7 @@ class Viajes extends React.Component {
 										style={{ marginTop: 5, float: 'left' }}
 										loading={this.state.loading}
 										onClick={() => this.llenar()}
-									><Icon type="search" />
+									><SearchOutlined />
 										Buscar
 									</Button>
 								</Col>
@@ -604,21 +622,21 @@ class Viajes extends React.Component {
 										style={{ float: "right", textAlign: 'right', }}
 										title="Total comisiones"
 										value={utils.currency(this.state.total ? parseFloat(this.state.total) : 0)}
-										prefix={<Icon style={{ marginRight: 15, color: '#00800d' }} type="dollar" />} />
+										prefix={<DollarOutlined style={{ marginRight: 15, color: '#00800d' }} />} />
 								</Col>
 								<Col span={8}>
 									<Statistic
 										style={{ float: "right", textAlign: 'right', }}
 										title="Comisión MercadoPago"
 										value={utils.currency(this.state.impcomisionMP ? parseFloat(this.state.impcomisionMP) : 0)}
-										prefix={<Icon style={{ marginRight: 15, color: '#0b00a6' }} type="dollar" />} />
+										prefix={<DollarOutlined style={{ marginRight: 15, color: '#0b00a6' }} />} />
 								</Col>
 								<Col span={8}>
 									<Statistic
 										style={{ float: "right", textAlign: 'right', fontWeight: 'bold', color: '#bf0d00' }}
 										title="Comisiones efectivo"
 										value={utils.currency(this.state.importecomision)}
-										prefix={<Icon style={{ marginRight: 15, color: '#bf0d00' }} type="dollar" />} />
+										prefix={<DollarOutlined style={{ marginRight: 15, color: '#bf0d00' }} />} />
 								</Col>
 							</Row>
 							<Divider />
@@ -658,7 +676,7 @@ class Viajes extends React.Component {
 					</div>
 				</QueueAnim>
 			</div>
-		);
+        );
 	}
 }
 

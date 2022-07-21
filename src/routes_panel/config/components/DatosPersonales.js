@@ -2,7 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { api } from '../../../api_panel';
 import { setUser } from 'actions/user';
-import { message, Col, Row, Modal, Divider, Form, Input, Button } from 'antd';
+import { LockOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Col, Row, Modal, Divider, Input, Button } from 'antd';
 import ChangePassword from '../../usuarios/components/ChangePassword'
 
 const FormItem = Form.Item;
@@ -149,7 +152,7 @@ class DatosPersonales extends React.Component {
         <Divider></Divider>
         <Button type="default"
           style={{ marginTop: 5, float: 'left' }}
-          icon="lock"
+          icon={<LockOutlined />}
           onClick={
             () => this.setState({ openChangePassword: true, })
           }

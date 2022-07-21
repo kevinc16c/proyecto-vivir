@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Breadcrumb, Icon } from 'antd';
+import { HomeOutlined } from '@ant-design/icons';
+import { Breadcrumb } from 'antd';
 
 class Section extends React.Component {
   render() {
@@ -19,7 +20,7 @@ class Section extends React.Component {
 
     const breadcrumbItems = [(
       <Breadcrumb.Item key="home">
-        <Icon type="home" />
+        <HomeOutlined />
       </Breadcrumb.Item>
     )].concat(extraBreadcrumbItems);
 

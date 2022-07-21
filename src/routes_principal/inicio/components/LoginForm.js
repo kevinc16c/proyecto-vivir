@@ -1,6 +1,9 @@
 import React from 'react';
 import { api } from 'api';
-import { message, Form, Icon, Input, Button, Card } from 'antd';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Input, Button, Card } from 'antd';
 import { withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import { setUser } from 'actions/user';
@@ -51,14 +54,14 @@ class NormalLoginForm extends React.Component {
               {getFieldDecorator('usuario', {
                 rules: [{ required: true, message: 'Por favor ingrese su nombre de usuario!' }],
               })(
-                <Input style={{ borderRadius: '25px' }} size="large" prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="Usuario" />
+                <Input style={{ borderRadius: '25px' }} size="large" prefix={<UserOutlined style={{ fontSize: 13 }} />} placeholder="Usuario" />
               )}
             </FormItem>
             <FormItem>
               {getFieldDecorator('clave', {
                 rules: [{ required: true, message: 'Por favor ingrese su contraseña!' }],
               })(
-                <Input size="large" prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="Contraseña" />
+                <Input size="large" prefix={<LockOutlined style={{ fontSize: 13 }} />} type="password" placeholder="Contraseña" />
               )}
             </FormItem>
 

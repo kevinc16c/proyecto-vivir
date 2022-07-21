@@ -1,7 +1,22 @@
 import React from 'react';
 import { api } from './api';
 import { connect } from 'react-redux';
-import { message, Modal, Form, Input, InputNumber, Row, Col, Divider, Spin, AutoComplete, Upload, Icon, DatePicker, Select } from 'antd';
+import { Form, Icon as LegacyIcon } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import {
+    message,
+    Modal,
+    Input,
+    InputNumber,
+    Row,
+    Col,
+    Divider,
+    Spin,
+    AutoComplete,
+    Upload,
+    DatePicker,
+    Select,
+} from 'antd';
 import queryString from 'query-string';
 
 const AutoCompleteOption = AutoComplete.Option;
@@ -155,7 +170,7 @@ class Nuevo extends React.Component {
 
         const uploadButton = (
             <div>
-                <Icon type={this.state.loading ? 'loading' : 'plus'} />
+                <LegacyIcon type={this.state.loading ? 'loading' : 'plus'} />
                 <div className="ant-upload-text">Upload</div>
             </div>
         );

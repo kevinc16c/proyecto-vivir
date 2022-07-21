@@ -1,7 +1,10 @@
 import React from 'react';
 import { api } from '../api';
 import { connect } from 'react-redux';
-import { message, Form, Input, Row, Col, Select, Button, Menu, Icon, Divider, Dropdown, Table } from 'antd';
+import { DeleteOutlined, EllipsisOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Input, Row, Col, Select, Button, Menu, Divider, Dropdown, Table } from 'antd';
 
 const Option = Select.Option;
 const FormItem = Form.Item;
@@ -49,14 +52,14 @@ class Redes extends React.Component {
                     return (
                         <Dropdown trigger={['click']} overlay={
                             <Menu>
-                                <Menu.Item key="1" onClick={() => this.handleDelete(record)}><Icon type="delete" style={{ color: '#grey' }} />Eliminar</Menu.Item>
+                                <Menu.Item key="1" onClick={() => this.handleDelete(record)}><DeleteOutlined style={{ color: '#grey' }} />Eliminar</Menu.Item>
                             </Menu>
                         }>
                             <Button size="small">
-                                <Icon type="ellipsis" />
+                                <EllipsisOutlined />
                             </Button>
                         </Dropdown>
-                    )
+                    );
                 },
             }
         ],

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { message, Table, Breadcrumb, Icon, Input, Button, Dropdown, Menu, Modal, Col, Row } from 'antd';
+import { EditOutlined, EllipsisOutlined, PlusOutlined } from '@ant-design/icons';
+import { message, Table, Breadcrumb, Input, Button, Dropdown, Menu, Modal, Col, Row } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import queryString from 'query-string';
 import { api } from './api';
@@ -57,16 +58,16 @@ class Vehiculos extends React.Component {
 					align: 'center',
 					render: (text, record) => {
 						return (
-							<Dropdown trigger={['click']} overlay={
+                            <Dropdown trigger={['click']} overlay={
 								<Menu>
-									<Menu.Item key="1" onClick={() => this.setState({ openEditar: true, registro: record })}><Icon type="edit" style={{ color: '#grey' }} />Editar</Menu.Item>
+									<Menu.Item key="1" onClick={() => this.setState({ openEditar: true, registro: record })}><EditOutlined style={{ color: '#grey' }} />Editar</Menu.Item>
 								</Menu>
 							}>
 								<Button size="small">
-									<Icon type="ellipsis" />
+									<EllipsisOutlined />
 								</Button>
 							</Dropdown>
-						)
+                        );
 					},
 				}
 			],
@@ -214,7 +215,7 @@ class Vehiculos extends React.Component {
 	render() {
 		let columns = [...this.state.columns];
 		return (
-			<div className="container-fluid no-breadcrumb">
+            <div className="container-fluid no-breadcrumb">
 				<QueueAnim type="bottom" className="ui-animate">
 					<Breadcrumb>
 						<Breadcrumb.Item>Inicio</Breadcrumb.Item>
@@ -230,7 +231,7 @@ class Vehiculos extends React.Component {
 								<Col style={{ float: 'right' }} sm={{ span: 12 }} xs={{ span: 24 }}>
 									<Button
 										type="primary"
-										icon="plus"
+										icon={<PlusOutlined />}
 										onClick={() => this.setState({ openNuevo: true })}
 										style={{ float: 'right' }}
 									>
@@ -295,7 +296,7 @@ class Vehiculos extends React.Component {
 					/>
 				}
 			</div>
-		);
+        );
 	}
 }
 

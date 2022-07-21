@@ -1,7 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './styles.scss'
-import { message, Table, PageHeader, Divider, Breadcrumb, Icon, Input, Button, Dropdown, Menu, Modal } from 'antd';
+import { EllipsisOutlined, PlusOutlined } from '@ant-design/icons';
+import {
+  message,
+  Table,
+  PageHeader,
+  Divider,
+  Breadcrumb,
+  Input,
+  Button,
+  Dropdown,
+  Menu,
+  Modal,
+} from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import { Resizable } from 'react-resizable';
 import queryString from 'query-string';
@@ -100,10 +112,10 @@ class Users extends React.Component {
               </Menu>
             }>
               <Button size="small">
-                <Icon type="ellipsis" />
+                <EllipsisOutlined />
               </Button>
             </Dropdown>
-          )
+          );
         },
       }],
     }
@@ -282,7 +294,7 @@ class Users extends React.Component {
                   onBack={this.props.closeModal}
                   title="Usuarios"
                   extra={[
-                    <Button icon="plus"
+                    <Button icon={<PlusOutlined />}
                       type="primary"
                       onClick={() => {
                         this.setState({ openNuevo: true })
@@ -350,7 +362,6 @@ class Users extends React.Component {
           />
         }
       </div>
-
     );
   }
 }

@@ -1,7 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Menu, Icon } from 'antd';
+
+import {
+  BarsOutlined,
+  EnvironmentOutlined,
+  FilePptOutlined,
+  PlusCircleOutlined,
+  ProfileOutlined,
+  ShopOutlined,
+  TagsOutlined,
+  TeamOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
+
+import { Menu } from 'antd';
 import APPCONFIG from 'constants/appConfig';
 import { toggleOffCanvasMobileNav } from 'actions/settings';
 
@@ -116,63 +129,63 @@ class AppMenu extends React.Component {
         <Menu.Item key="/admin/operadores">
           <a href="#/admin/operadores">
             <span>
-              <Icon type="user" /><span className="nav-text">Operadores</span>
+              <UserOutlined /><span className="nav-text">Operadores</span>
             </span>
           </a>
         </Menu.Item>
         <Menu.Item key="/admin/propietarios">
           <a href="#/admin/propietarios">
             <span>
-              <Icon type="team" /><span className="nav-text">Personas jurídicas</span>
+              <TeamOutlined /><span className="nav-text">Personas jurídicas</span>
             </span>
           </a>
         </Menu.Item>
         <Menu.Item key="/admin/lugares">
           <a href="#/admin/lugares">
             <span>
-              <Icon type="shop" /><span className="nav-text">Lugares</span>
+              <ShopOutlined /><span className="nav-text">Lugares</span>
             </span>
           </a>
         </Menu.Item>
         <Menu.Item key="/admin/promociones">
           <a href="#/admin/promociones">
             <span>
-              <Icon type="tags" /><span className="nav-text">Promociones</span>
+              <TagsOutlined /><span className="nav-text">Promociones</span>
             </span>
           </a>
         </Menu.Item>
         <Menu.Item key="/admin/rubros">
           <a href="#/admin/rubros">
             <span>
-              <Icon type="profile" /><span className="nav-text">Rubros</span>
+              <ProfileOutlined /><span className="nav-text">Rubros</span>
             </span>
           </a>
         </Menu.Item>
         <Menu.Item key="/admin/subrubros">
           <a href="#/admin/subrubros">
             <span>
-              <Icon type="profile" /><span className="nav-text">Subrubros</span>
+              <ProfileOutlined /><span className="nav-text">Subrubros</span>
             </span>
           </a>
         </Menu.Item>
         <Menu.Item key="/admin/palabrasclaves">
           <a href="#/admin/palabrasclaves">
             <span>
-              <Icon type="file-ppt" /><span className="nav-text">Palabras claves</span>
+              <FilePptOutlined /><span className="nav-text">Palabras claves</span>
             </span>
           </a>
         </Menu.Item>
         <Menu.Item key="/admin/productoscategorias">
           <a href="#/admin/productoscategorias">
             <span>
-              <Icon type="bars" /><span className="nav-text">Categorías de productos</span>
+              <BarsOutlined /><span className="nav-text">Categorías de productos</span>
             </span>
           </a>
         </Menu.Item>
         <Menu.Item key="/admin/farmacias">
           <a href="#/admin/farmacias">
             <span>
-              <Icon type="plus-circle" /><span className="nav-text">Farmacias de turno</span>
+              <PlusCircleOutlined /><span className="nav-text">Farmacias de turno</span>
             </span>
           </a>
         </Menu.Item>
@@ -186,7 +199,7 @@ class AppMenu extends React.Component {
         </Menu.Item>
         <SubMenu
           key="/admin/localidad"
-          title={<span><Icon type="environment" /><span className="nav-text">Localidades</span></span>}
+          title={<span><EnvironmentOutlined /><span className="nav-text">Localidades</span></span>}
         >
           <Menu.Item key="/admin/localidades">
             <a href="#/admin/localidades">
@@ -211,8 +224,7 @@ class AppMenu extends React.Component {
           </Menu.Item>
         </SubMenu>
       </Menu>
-
-    )
+    );
   }
 }
 

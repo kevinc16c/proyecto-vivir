@@ -1,7 +1,10 @@
 import React from 'react';
 import {api} from '../api';
 import { connect } from 'react-redux';
-import { message, Modal, Form, Icon, Input } from 'antd';
+import { LockOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Modal, Input } from 'antd';
 const FormItem = Form.Item;
 
 class ChangePassword extends React.Component {
@@ -77,14 +80,14 @@ class ChangePassword extends React.Component {
                         {getFieldDecorator('oldclave', {
                             rules: [{ required: true, message: 'Por favor ingrese su clave actual' }],
                             })(
-                            <Input type="password" size="large" prefix={<Icon type="lock" style={{ fontSize: 13 }} />} placeholder="Clave actual" />
+                            <Input type="password" size="large" prefix={<LockOutlined style={{ fontSize: 13 }} />} placeholder="Clave actual" />
                         )}
                         </FormItem>
                         <FormItem>
                         {getFieldDecorator('clave', {
                             rules: [{ required: true, message: 'Por favor ingrese su nueva clave' }],
                             })(
-                            <Input type="password" size="large" prefix={<Icon type="lock" style={{ fontSize: 13 }} />} placeholder="Nueva clave" />
+                            <Input type="password" size="large" prefix={<LockOutlined style={{ fontSize: 13 }} />} placeholder="Nueva clave" />
                         )}
                         </FormItem>
                     </Form>

@@ -1,7 +1,10 @@
 import React from 'react';
 import { api } from '../api';
 import { connect } from 'react-redux';
-import { message, Form, Modal, Row, Col, Select, Button, Menu, Icon, Divider, Dropdown, Table } from 'antd';
+import { DeleteOutlined, EditOutlined, EllipsisOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Modal, Row, Col, Select, Button, Menu, Divider, Dropdown, Table } from 'antd';
 import Edit from './HorariosEdit';
 
 const Option = Select.Option;
@@ -59,16 +62,16 @@ class Horarios extends React.Component {
                     return (
                         <Dropdown trigger={['click']} overlay={
                             <Menu>
-                                <Menu.Item key="1" onClick={() => this.setState({openEditar: true, registro: record})}><Icon type="edit" style={{ color: '#grey' }} />Editar</Menu.Item>
-                                <Menu.Item key="2" onClick={() => this.showDeleteConfirm(record.id)}><Icon type="delete" style={{ color: 'red' }} />Eliminar</Menu.Item>
+                                <Menu.Item key="1" onClick={() => this.setState({openEditar: true, registro: record})}><EditOutlined style={{ color: '#grey' }} />Editar</Menu.Item>
+                                <Menu.Item key="2" onClick={() => this.showDeleteConfirm(record.id)}><DeleteOutlined style={{ color: 'red' }} />Eliminar</Menu.Item>
 
                             </Menu>
                         }>
                             <Button size="small">
-                                <Icon type="ellipsis" />
+                                <EllipsisOutlined />
                             </Button>
                         </Dropdown>
-                    )
+                    );
                 },
             }
         ],

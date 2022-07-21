@@ -1,7 +1,21 @@
 import React from 'react';
 import { api } from './api';
 import { connect } from 'react-redux';
-import { message, Modal, Form, Input, InputNumber, Row, Col, Divider, Upload, Button, DatePicker, Icon } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import {
+    message,
+    Modal,
+    Input,
+    InputNumber,
+    Row,
+    Col,
+    Divider,
+    Upload,
+    Button,
+    DatePicker,
+} from 'antd';
 import { config } from '../../config';
 import moment from 'moment';
 
@@ -124,7 +138,7 @@ class Editar extends React.Component {
             <div>
                 <img src={`${config.URL_IMG}${this.props.data  && this.props.data.rutaimg}`} className="img-fluid pb-2" alt="resp-imagen"/>
 
-                <Button><Icon type="upload" />Cambiar</Button>
+                <Button><UploadOutlined />Cambiar</Button>
             </div>
         );
         return (

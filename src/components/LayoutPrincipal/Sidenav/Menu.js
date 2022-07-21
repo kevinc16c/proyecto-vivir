@@ -2,7 +2,17 @@ import React from 'react';
 import { api } from './api';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { message, Menu, Icon, Tooltip, Badge } from 'antd';
+
+import {
+  ContactsOutlined,
+  ContainerOutlined,
+  ShopOutlined,
+  ShoppingCartOutlined,
+  ShoppingOutlined,
+  TagsOutlined,
+} from '@ant-design/icons';
+
+import { message, Menu, Tooltip, Badge } from 'antd';
 import APPCONFIG from 'constants/appConfig';
 import { toggleOffCanvasMobileNav } from 'actions/settings';
 
@@ -111,7 +121,7 @@ class AppMenu extends React.Component {
         <Menu.Item key="/panel/lugares_panel">
           <a href={`#/panel/lugares/${user && user.id}`} onClick={() => { sessionStorage.setItem("lugar_id", null) }}>
             <span>
-              <Icon type="shop" /><span className="nav-text">Lugares</span>
+              <ShopOutlined /><span className="nav-text">Lugares</span>
             </span>
           </a>
         </Menu.Item>
@@ -119,7 +129,7 @@ class AppMenu extends React.Component {
           <Menu.Item key="/panel/pedidos">
             <a href={'#/panel/pedidos'} onClick={() => this.setState({ primerPlano: '' })}>
               <span>
-                <Icon type="shopping-cart" /><span className="nav-text">Pedidos</span>
+                <ShoppingCartOutlined /><span className="nav-text">Pedidos</span>
                 <Tooltip placement="bottom">
                   <a
                     href="#/panel/pedidos" className="list-inline-item pl-5">
@@ -134,7 +144,7 @@ class AppMenu extends React.Component {
           <Menu.Item key="/panel/productos">
             <a href={`#/panel/productos`} >
               <span>
-                <Icon type="shopping" /><span className="nav-text">Productos</span>
+                <ShoppingOutlined /><span className="nav-text">Productos</span>
               </span>
             </a>
           </Menu.Item>
@@ -143,7 +153,7 @@ class AppMenu extends React.Component {
           <Menu.Item key="/panel/sabores_variedades">
             <a href={`#/panel/sabores_variedades`} >
               <span>
-                <Icon type="container" /><span className="nav-text">Sabores / variedades</span>
+                <ContainerOutlined /><span className="nav-text">Sabores / variedades</span>
               </span>
             </a>
           </Menu.Item>
@@ -152,7 +162,7 @@ class AppMenu extends React.Component {
           <Menu.Item key="/panel/promociones">
             <a href={`#/panel/promociones`} >
               <span>
-                <Icon type="tags" /><span className="nav-text">Promociones</span>
+                <TagsOutlined /><span className="nav-text">Promociones</span>
               </span>
             </a>
           </Menu.Item>
@@ -161,13 +171,13 @@ class AppMenu extends React.Component {
           <Menu.Item key="/panel/cuentas">
             <a href={`#/panel/cuentas`} >
               <span>
-                <Icon type="contacts" /><span className="nav-text">Cuentas MP</span>
+                <ContactsOutlined /><span className="nav-text">Cuentas MP</span>
               </span>
             </a>
           </Menu.Item>
         }
       </Menu>
-    )
+    );
   }
 }
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './styles.scss'
-import { message, Table, Breadcrumb, Icon, Input, Button, Row, Modal, Tooltip, Col } from 'antd';
+import { FilePdfTwoTone, FileTwoTone } from '@ant-design/icons';
+import { message, Table, Breadcrumb, Input, Button, Row, Modal, Tooltip, Col } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import { Resizable } from 'react-resizable';
 import queryString from 'query-string';
@@ -84,19 +85,25 @@ class Liquidaciones extends React.Component {
 					width: 10,
 					render: (text, record) => {
 						return (
-							<div>
+                            <div>
 								<Col span={12} >
 									<Tooltip title="Ver detalle">
-										<Icon type="file" theme="twoTone" twoToneColor="#0063c7"  style={{marginRight:4, fontSize:18 }} onClick={()=>{this.props.history.push(`/admin/liquidaciones/${record.id}`)}}/>
+										<FileTwoTone
+                                            twoToneColor="#0063c7"
+                                            style={{marginRight:4, fontSize:18 }}
+                                            onClick={()=>{this.props.history.push(`/admin/liquidaciones/${record.id}`)}} />
 									</Tooltip>
 								</Col>
 								<Col span={12}>
 									<Tooltip title="Imprimir comprobante">
-										<Icon type="file-pdf" theme="twoTone" twoToneColor="#d10000" style={{marginLeft:4, fontSize:18}} onClick={()=>this.imprimir(record.numerolqfl)}/>
+										<FilePdfTwoTone
+                                            twoToneColor="#d10000"
+                                            style={{marginLeft:4, fontSize:18}}
+                                            onClick={()=>this.imprimir(record.numerolqfl)} />
 									</Tooltip>
 								</Col>
 							</div>
-						)
+                        );
 					},
 				}
 			],
@@ -138,19 +145,25 @@ class Liquidaciones extends React.Component {
 					width: 10,
 					render: (text, record) => {
 						return (
-							<div>
+                            <div>
 								<Col span={12} >
 									<Tooltip title="Ver detalle">
-										<Icon type="file" theme="twoTone" twoToneColor="#0063c7"  style={{marginRight:4, fontSize:18 }} onClick={()=>{this.props.history.push(`/app/comprobantes/cliente/${record.id}`)}}/>
+										<FileTwoTone
+                                            twoToneColor="#0063c7"
+                                            style={{marginRight:4, fontSize:18 }}
+                                            onClick={()=>{this.props.history.push(`/app/comprobantes/cliente/${record.id}`)}} />
 									</Tooltip>
 								</Col>
 								<Col span={12}>
 									<Tooltip title="Imprimir comprobante">
-										<Icon type="file-pdf" theme="twoTone" twoToneColor="#d10000" style={{marginLeft:4, fontSize:18}} onClick={()=>this.imprimir(record.id)}/>
+										<FilePdfTwoTone
+                                            twoToneColor="#d10000"
+                                            style={{marginLeft:4, fontSize:18}}
+                                            onClick={()=>this.imprimir(record.id)} />
 									</Tooltip>
 								</Col>
 							</div>
-						)
+                        );
 					},
 				}
 			],

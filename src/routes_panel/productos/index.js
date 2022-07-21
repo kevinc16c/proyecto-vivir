@@ -1,6 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { message, Table, Breadcrumb, Icon, Input, Button, Dropdown, Menu, Modal, Col, Row, Switch } from 'antd';
+import {
+    CheckCircleOutlined,
+    EditOutlined,
+    EllipsisOutlined,
+    PlusOutlined,
+    StopOutlined,
+} from '@ant-design/icons';
+import {
+    message,
+    Table,
+    Breadcrumb,
+    Input,
+    Button,
+    Dropdown,
+    Menu,
+    Modal,
+    Col,
+    Row,
+    Switch,
+} from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import { api } from './api';
 import Nuevo from './Nuevo';
@@ -46,7 +65,7 @@ class Productos extends React.Component {
 					align: 'center',
 					render: (text, record) => {
 						return (
-							<Dropdown trigger={['click']} overlay={
+                            <Dropdown trigger={['click']} overlay={
 								<Menu>
 									{record.estado !== "B" &&
 										<Menu.Item key="1" onClick={() => this.props.history.push({
@@ -54,23 +73,23 @@ class Productos extends React.Component {
 											search: '',
 											data: record,
 											idrubro: this.props.location.idrubro,
-										})}><Icon type="edit" style={{ color: '#grey' }} />Editar
+										})}><EditOutlined style={{ color: '#grey' }} />Editar
 									</Menu.Item>
 									}
 									{
 										record.estado === "B"
 											?
-											<Menu.Item key="2" onClick={() => this.showHabilitar(record.id)}><Icon type="check-circle" style={{ color: '#73d13d' }} />Alta</Menu.Item>
+											<Menu.Item key="2" onClick={() => this.showHabilitar(record.id)}><CheckCircleOutlined style={{ color: '#73d13d' }} />Alta</Menu.Item>
 											:
-											<Menu.Item key="4" onClick={() => this.showEstadoBaja(record.id)}><Icon type="stop" style={{ color: 'red' }} />Baja</Menu.Item>
+											<Menu.Item key="4" onClick={() => this.showEstadoBaja(record.id)}><StopOutlined style={{ color: 'red' }} />Baja</Menu.Item>
 									}
 								</Menu>
 							}>
 								<Button size="small">
-									<Icon type="ellipsis" />
+									<EllipsisOutlined />
 								</Button>
 							</Dropdown>
-						)
+                        );
 					},
 				},
 				{
@@ -285,7 +304,7 @@ class Productos extends React.Component {
 		const id_user = this.props.user && this.props.user.id;
 
 		return (
-			<div className="container-fluid no-breadcrumb">
+            <div className="container-fluid no-breadcrumb">
 				<QueueAnim type="bottom" className="ui-animate">
 					<Breadcrumb>
 						<Breadcrumb.Item href={"#/panel/lugares/" + id_user}>Lugares</Breadcrumb.Item>
@@ -300,7 +319,7 @@ class Productos extends React.Component {
 								<Col style={{ float: 'right' }} sm={{ span: 12 }} xs={{ span: 24 }}>
 									<Button
 										type="primary"
-										icon="plus"
+										icon={<PlusOutlined />}
 										onClick={() => this.setState({ openNuevo: true })}
 										style={{ float: 'right'}}
 									>
@@ -356,7 +375,7 @@ class Productos extends React.Component {
 					/>
 				}
 			</div>
-		);
+        );
 	}
 }
 

@@ -1,7 +1,10 @@
 import React from 'react';
 import {api} from '../api';
 import { connect } from 'react-redux';
-import { message, Modal, Form, Icon, Input, Select, Tabs, Transfer } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Modal, Input, Select, Tabs, Transfer } from 'antd';
 import queryString from 'query-string';
 
 const FormItem = Form.Item;
@@ -189,7 +192,7 @@ class EditarUser extends React.Component {
             >
                 <section className="form-v1-container">
 
-                    <h4 style={{marginBottom:15}}><Icon type="user"/> Editar usuario</h4>
+                    <h4 style={{marginBottom:15}}><UserOutlined /> Editar usuario</h4>
                     <Form layout="inline">
                         <Tabs defaultActiveKey="1">
                             <TabPane tab="Datos" key="1">

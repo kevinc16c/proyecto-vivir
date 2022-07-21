@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Icon, message } from 'antd';
+import Icon from '@ant-design/icons';
+import { message } from 'antd';
 import queryString from 'query-string';
 import { api } from '../api';
 import firebase from '../../../firebase';

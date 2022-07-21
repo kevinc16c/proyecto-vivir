@@ -1,7 +1,21 @@
 import React from 'react';
 import { api } from './api';
 import { connect } from 'react-redux';
-import { message, Modal, Form, Input, InputNumber, Row, Col, Divider, Spin, AutoComplete, DatePicker, Select } from 'antd';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import {
+    message,
+    Modal,
+    Input,
+    InputNumber,
+    Row,
+    Col,
+    Divider,
+    Spin,
+    AutoComplete,
+    DatePicker,
+    Select,
+} from 'antd';
 import queryString from 'query-string';
 import moment from 'moment';
 

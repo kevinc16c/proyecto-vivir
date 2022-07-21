@@ -2,7 +2,10 @@
 import React from 'react';
 import { api } from 'api';
 import { connect } from 'react-redux';
-import { message, Tabs, Breadcrumb, Form, Input, Row, Col, Transfer, Button, Divider } from 'antd';
+import { CloseOutlined, LockOutlined, SaveOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Tabs, Breadcrumb, Input, Row, Col, Transfer, Button, Divider } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import './styles.scss'
 import Blanquear from './components/BlanqueoClave';
@@ -91,7 +94,7 @@ class Editar extends React.Component {
 		const { getFieldDecorator } = this.props.form;
 		const { targetKeysRoles, selectedKeysRoles } = this.state;
 		return (
-			<QueueAnim type="bottom" className="ui-animate">
+            <QueueAnim type="bottom" className="ui-animate">
 				<Breadcrumb>
 					<Breadcrumb.Item>Inicio</Breadcrumb.Item>
 					<Breadcrumb.Item>Usuarios</Breadcrumb.Item>
@@ -215,21 +218,21 @@ class Editar extends React.Component {
 						</Tabs>
 						<Divider></Divider>
 						<Button
-							icon="lock"
+							icon={<LockOutlined />}
 							disabled={this.state.disabledLogin}
 							loading={this.state.confirmLoading}
 							style={{ marginTop: 5, float: 'left' }}
 							onClick={() => this.setState({ openBlanqueo: true })}>
 							Blanquear clave
 								</Button>
-						<Button type="primary" htmlType="submit" icon="save"
+						<Button type="primary" htmlType="submit" icon={<SaveOutlined />}
 							style={{ marginTop: 5, marginLeft: 5, float: 'right' }}
 							onClick={this.handleSubmit}
 							disabled={this.state.disabledLogin}
 							loading={this.state.confirmLoading}>
 							Guardar
 								</Button>
-						<Button htmlType="submit" icon="close"
+						<Button htmlType="submit" icon={<CloseOutlined />}
 							style={{ marginTop: 5, float: 'right' }}
 							onClick={this.props.closeModal}>
 							Cancelar
@@ -247,7 +250,7 @@ class Editar extends React.Component {
 					}
 				</div>
 			</QueueAnim>
-		);
+        );
 	}
 }
 

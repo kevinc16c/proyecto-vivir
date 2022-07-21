@@ -1,7 +1,9 @@
 import React from 'react';
 import { api } from '../api';
 import { connect } from 'react-redux';
-import { message, Form, Row, Col, Button, Modal, Table } from 'antd';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Row, Col, Button, Modal, Table } from 'antd';
 import queryString from 'query-string';
 import AgregarInsumos from './AgregarInsumos';
 

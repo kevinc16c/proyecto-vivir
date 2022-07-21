@@ -1,6 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { message, Divider, Table, Button, Row, Col, Modal, Input, Form, Select, InputNumber, DatePicker } from 'antd';
+import { DeleteOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import {
+  message,
+  Divider,
+  Table,
+  Button,
+  Row,
+  Col,
+  Modal,
+  Input,
+  Select,
+  InputNumber,
+  DatePicker,
+} from 'antd';
 import _ from 'lodash'
 import { api } from './api';
 import { utils } from 'utils';
@@ -57,7 +72,7 @@ class Imputacion extends React.Component {
           key: 'delete',
           dataIndex: 'delete',
           render: (col,row,index) => (
-            <Button icon="delete" style={{ color: '#c90a0a' }} onClick={()=>this.borrar(row,index)}></Button>
+            <Button icon={<DeleteOutlined />} style={{ color: '#c90a0a' }} onClick={()=>this.borrar(row,index)}></Button>
           ),
           width: 10,
         }
@@ -124,7 +139,7 @@ class Imputacion extends React.Component {
           key: 'delete',
           dataIndex: 'delete',
           render: (col,row,index) => (
-            <Button icon="delete" style={{ color: '#c90a0a' }} onClick={()=>this.borrarcheque(row,index)}></Button>
+            <Button icon={<DeleteOutlined />} style={{ color: '#c90a0a' }} onClick={()=>this.borrarcheque(row,index)}></Button>
           ),
           width: 10,
         }

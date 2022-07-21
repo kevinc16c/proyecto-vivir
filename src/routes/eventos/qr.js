@@ -1,7 +1,10 @@
 import React from 'react';
 import { api } from './api';
 import { connect } from 'react-redux';
-import { Modal, Form, Button, Row, Divider, Icon, Col } from 'antd';
+import { PrinterOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Modal, Button, Row, Divider, Col } from 'antd';
 import { config } from '../../config';
 
 class QR extends React.Component {
@@ -57,7 +60,7 @@ class QR extends React.Component {
                                     onClick={()=>this.imprimirQR()}
                                     loading={this.state.loading}
                                 >
-                                    Imprimir <Icon type="printer" />
+                                    Imprimir <PrinterOutlined />
                                 </Button>
                             </Col>
                         </Row>

@@ -4,7 +4,9 @@ import { api } from 'api';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
 import DEMO from 'constants/demoData';
-import { message, Layout, Menu, Dropdown, Avatar, Icon, Tooltip } from 'antd';
+import { Icon as LegacyIcon } from '@ant-design/compatible';
+import { LogoutOutlined, NotificationOutlined, SettingOutlined } from '@ant-design/icons';
+import { message, Layout, Menu, Dropdown, Avatar, Tooltip } from 'antd';
 import { toggleCollapsedNav, toggleOffCanvasMobileNav } from 'actions/settings';
 import { setUser } from 'actions/user';
 import ChangePassword from '../../../routes/usuarios/components/ChangePassword';
@@ -87,14 +89,14 @@ class AppHeader extends React.Component {
           <div className="header-left">
             <div className="list-unstyled list-inline">
               <a href={DEMO.link} className="list-inline-item d-none d-md-inline-block" onClick={this.onToggleCollapsedNav}>
-                <Icon type={collapsedNav ? 'menu-unfold' : 'menu-fold'} style={{ color: 'white' }} className="list-icon" />
+                <LegacyIcon type={collapsedNav ? 'menu-unfold' : 'menu-fold'} style={{ color: 'white' }} className="list-icon" />
               </a>
               <a href={DEMO.link} className="list-inline-item d-md-none" onClick={this.onToggleOffCanvasMobileNav}>
-                <Icon type={offCanvasMobileNav ? 'menu-unfold' : 'menu-fold'} style={{ color: 'white' }} className="list-icon" />
+                <LegacyIcon type={offCanvasMobileNav ? 'menu-unfold' : 'menu-fold'} style={{ color: 'white' }} className="list-icon" />
               </a>
               <Tooltip placement="bottom" title="Notificar">
                 <a href="#/admin/notificaciones" className="list-inline-item d-md-inline-block">
-                  <Icon type="notification" className="list-icon" style={{ color: 'white' }} />
+                  <NotificationOutlined className="list-icon" style={{ color: 'white' }} />
                 </a>
               </Tooltip>
             </div>
@@ -108,9 +110,9 @@ class AppHeader extends React.Component {
                   <Menu.Divider className="d-block d-md-none" />
                   <Menu.Item key="1" onClick={() => {
                     this.props.history.push(this.props.user && '/app/config/' + this.props.user.id);
-                  }}> <Icon type="setting" />Configuración </Menu.Item>
+                  }}> <SettingOutlined />Configuración </Menu.Item>
                   <Menu.Divider />
-                  <Menu.Item key="3" onClick={() => this.salir()}> <a href={DEMO.link} ><Icon type="logout" />Salir</a> </Menu.Item>
+                  <Menu.Item key="3" onClick={() => this.salir()}> <a href={DEMO.link} ><LogoutOutlined />Salir</a> </Menu.Item>
                 </Menu>
               } trigger={['click']} placement="bottomRight">
                 <a className="ant-dropdown-link no-link-style" href={DEMO.link} >

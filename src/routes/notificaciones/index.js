@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { message, Breadcrumb, Input, Button, Form, Select, Modal, Col, Row, DatePicker } from 'antd';
+import { NotificationOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Breadcrumb, Input, Button, Select, Modal, Col, Row, DatePicker } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import queryString from 'query-string';
 import { api } from './api';
@@ -187,7 +190,7 @@ class Notificaciones extends React.Component {
 	render() {
 		const { getFieldDecorator } = this.props.form;
 		return (
-			<div className="container-fluid no-breadcrumb">
+            <div className="container-fluid no-breadcrumb">
 				<QueueAnim type="bottom" className="ui-animate">
 					<Breadcrumb>
 						<Breadcrumb.Item>Inicio</Breadcrumb.Item>
@@ -281,7 +284,7 @@ class Notificaciones extends React.Component {
 									<Col span={12}>
 										<Button
 											type="primary"
-											icon="notification"
+											icon={<NotificationOutlined />}
 											onClick={this.handleSubmit}
 											style={{ marginBottom: 10 }}>
 											Enviar notificación
@@ -293,7 +296,7 @@ class Notificaciones extends React.Component {
 					</div>
 				</QueueAnim>
 			</div>
-		);
+        );
 	}
 }
 

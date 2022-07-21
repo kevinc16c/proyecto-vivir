@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Table, Button, Icon, Col, Row, Breadcrumb, message, Input, Divider, Form } from 'antd';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Table, Button, Col, Row, Breadcrumb, message, Input, Divider } from 'antd';
 // import { api } from './api';
 // import { isMobile } from 'react-device-detect';
 import QueueAnim from 'rc-queue-anim';

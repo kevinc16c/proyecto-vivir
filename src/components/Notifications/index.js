@@ -1,5 +1,7 @@
 import React from 'react';
-import { List, Avatar, Tabs, Icon, Tag } from 'antd';
+import { ArrowRightOutlined, MessageOutlined, NotificationOutlined, ProfileOutlined } from '@ant-design/icons';
+import { Icon as LegacyIcon } from '@ant-design/compatible';
+import { List, Avatar, Tabs, Tag } from 'antd';
 import DEMO from 'constants/demoData';
 
 const list = DEMO.list;
@@ -7,14 +9,14 @@ const TabPane = Tabs.TabPane;
 
 const NotificationTab = () => (
   <List
-    footer={<a href={DEMO.link} className="no-link-style">Read All <Icon type="arrow-right" /></a>}
+    footer={<a href={DEMO.link} className="no-link-style">Read All <ArrowRightOutlined /></a>}
     itemLayout="horizontal"
     dataSource={list.notifications}
     renderItem={item => (
       <List.Item>
         <div className="list-style-v1">
           <div className="list-item">
-            <div className={`icon-btn icon-btn-round mr-3 ${item.iconColor}`}><Icon type={item.icon} /></div>
+            <div className={`icon-btn icon-btn-round mr-3 ${item.iconColor}`}><LegacyIcon type={item.icon} /></div>
             <div className="list-item__body">
               <div className="list-item__title">{item.title}</div>
               <div className="list-item__datetime">{item.datetime}</div>
@@ -28,7 +30,7 @@ const NotificationTab = () => (
 
 const MessageTab = () => (
   <List
-    footer={<a href={DEMO.link} className="no-link-style">Read All <Icon type="arrow-right" /></a>}
+    footer={<a href={DEMO.link} className="no-link-style">Read All <ArrowRightOutlined /></a>}
     itemLayout="horizontal"
     dataSource={list.messages}
     renderItem={item => (
@@ -50,7 +52,7 @@ const MessageTab = () => (
 
 const TaskTab = () => (
   <List
-    footer={<a href={DEMO.link} className="no-link-style">Read All <Icon type="arrow-right" /></a>}
+    footer={<a href={DEMO.link} className="no-link-style">Read All <ArrowRightOutlined /></a>}
     itemLayout="horizontal"
     dataSource={list.tasks}
     renderItem={item => (
@@ -70,13 +72,13 @@ const TaskTab = () => (
 
 const PopoverTabs = () => (
   <Tabs animated={false}>
-    <TabPane tab={<span><Icon type="notification" />Notifications (4)</span>} key="1">
+    <TabPane tab={<span><NotificationOutlined />Notifications (4)</span>} key="1">
       <NotificationTab />
     </TabPane>
-    <TabPane tab={<span><Icon type="message" />Messages (3)</span>} key="2">
+    <TabPane tab={<span><MessageOutlined />Messages (3)</span>} key="2">
       <MessageTab />
     </TabPane>
-    <TabPane tab={<span><Icon type="profile" />Tasks (4)</span>} key="3">
+    <TabPane tab={<span><ProfileOutlined />Tasks (4)</span>} key="3">
       <TaskTab />
     </TabPane>
   </Tabs>

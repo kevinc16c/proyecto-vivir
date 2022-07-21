@@ -1,7 +1,22 @@
 import React from 'react';
 import { api } from './api';
 import { connect } from 'react-redux';
-import { message, Form, Input, Row, Col, Select, Button, AutoComplete, Breadcrumb, PageHeader, Divider, Spin, DatePicker } from 'antd';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import {
+    message,
+    Input,
+    Row,
+    Col,
+    Select,
+    Button,
+    AutoComplete,
+    Breadcrumb,
+    PageHeader,
+    Divider,
+    Spin,
+    DatePicker,
+} from 'antd';
 import _ from 'lodash';
 import QueueAnim from 'rc-queue-anim';
 import queryString from 'query-string';

@@ -1,7 +1,10 @@
 import React from 'react';
 import { api } from './api';
 import { connect } from 'react-redux';
-import { message, Table, Card, Divider, PageHeader, Modal, Form, Row, Col, Button } from 'antd';
+import { DeleteOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Table, Card, Divider, PageHeader, Modal, Row, Col, Button } from 'antd';
 import './styles.scss'
 import QueueAnim from 'rc-queue-anim';
 import moment from 'moment';
@@ -170,7 +173,7 @@ class Detalle extends React.Component {
                             <PageHeader
                                 title={`Liquidación N°: ${this.props.match.params.id}`}
                                 extra={[
-                                    <Button type="danger" onClick={() => { this.showDelete() }} icon="delete">
+                                    <Button type="danger" onClick={() => { this.showDelete() }} icon={<DeleteOutlined />}>
                                         Eliminar
                                     </Button>,
                                     <Button onClick={() => { this.imprimir() }}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { message, Button, Switch, Icon, Divider, Modal } from 'antd';
+import Icon from '@ant-design/icons';
+import { message, Button, Switch, Divider, Modal } from 'antd';
 import './styless.scss';
 import queryString from 'query-string';
 import { api } from './api';

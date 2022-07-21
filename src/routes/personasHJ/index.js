@@ -1,6 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { message, Table, Breadcrumb, Icon, Input, Button, Dropdown, Menu, Modal, Col, Row } from 'antd';
+
+import {
+    CheckCircleOutlined,
+    DeleteOutlined,
+    EditOutlined,
+    EllipsisOutlined,
+    LockOutlined,
+    MailOutlined,
+    PlusOutlined,
+    StopOutlined,
+} from '@ant-design/icons';
+
+import { message, Table, Breadcrumb, Input, Button, Dropdown, Menu, Modal, Col, Row } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import queryString from 'query-string';
 import { api } from './api';
@@ -59,26 +71,26 @@ class Vehiculos extends React.Component {
 					align: 'center',
 					render: (text, record) => {
 						return (
-							<Dropdown trigger={['click']} overlay={
+                            <Dropdown trigger={['click']} overlay={
 								<Menu>
-									<Menu.Item key="1" onClick={() => this.setState({ openEditar: true, registro: record })}><Icon type="edit" style={{ color: '#grey' }} />Editar</Menu.Item>
+									<Menu.Item key="1" onClick={() => this.setState({ openEditar: true, registro: record })}><EditOutlined style={{ color: '#grey' }} />Editar</Menu.Item>
 									{
 										record.estado === "B"
 											?
-											<Menu.Item key="2" onClick={() => this.showHabilitar(record.id)}><Icon type="check-circle" style={{ color: '#73d13d' }} />Alta</Menu.Item>
+											<Menu.Item key="2" onClick={() => this.showHabilitar(record.id)}><CheckCircleOutlined style={{ color: '#73d13d' }} />Alta</Menu.Item>
 											:
-											<Menu.Item key="4" onClick={() => this.showEstadoBaja(record.id)}><Icon type="stop" style={{ color: 'red' }} />Baja</Menu.Item>
+											<Menu.Item key="4" onClick={() => this.showEstadoBaja(record.id)}><StopOutlined style={{ color: 'red' }} />Baja</Menu.Item>
 									}
-									<Menu.Item key="3" onClick={() => this.showDeleteConfirm(record.id)}><Icon type="delete" style={{ color: 'red' }} />Eliminar</Menu.Item>
-									<Menu.Item key="5" disabled={record.cambiarpass === 0 ? false : true} onClick={() => this.showAsignarPass(record)}><Icon type="lock" style={{ color: '#grey' }} />Asignar contraseña</Menu.Item>
-									<Menu.Item key="6" disabled={record.cambiarpass === 0 ? false : true} onClick={() => this.enviarPass(record)}><Icon type="mail" style={{ color: '#grey' }} />Enviar contraseña por mail</Menu.Item>
+									<Menu.Item key="3" onClick={() => this.showDeleteConfirm(record.id)}><DeleteOutlined style={{ color: 'red' }} />Eliminar</Menu.Item>
+									<Menu.Item key="5" disabled={record.cambiarpass === 0 ? false : true} onClick={() => this.showAsignarPass(record)}><LockOutlined style={{ color: '#grey' }} />Asignar contraseña</Menu.Item>
+									<Menu.Item key="6" disabled={record.cambiarpass === 0 ? false : true} onClick={() => this.enviarPass(record)}><MailOutlined style={{ color: '#grey' }} />Enviar contraseña por mail</Menu.Item>
 								</Menu>
 							}>
 								<Button size="small">
-									<Icon type="ellipsis" />
+									<EllipsisOutlined />
 								</Button>
 							</Dropdown>
-						)
+                        );
 					},
 				}
 			],
@@ -237,7 +249,7 @@ class Vehiculos extends React.Component {
 	render() {
 		let columns = [...this.state.columns];
 		return (
-			<div className="container-fluid no-breadcrumb">
+            <div className="container-fluid no-breadcrumb">
 				<QueueAnim type="bottom" className="ui-animate">
 					<Breadcrumb>
 						<Breadcrumb.Item>Inicio</Breadcrumb.Item>
@@ -253,7 +265,7 @@ class Vehiculos extends React.Component {
 								<Col style={{ float: 'right' }} sm={{ span: 12 }} xs={{ span: 24 }}>
 									<Button
 										type="primary"
-										icon="plus"
+										icon={<PlusOutlined />}
 										onClick={() => this.setState({ openNuevo: true })}
 										style={{ float: 'right' }}
 									>
@@ -351,7 +363,7 @@ class Vehiculos extends React.Component {
 					/>
 				}
 			</div>
-		);
+        );
 	}
 }
 

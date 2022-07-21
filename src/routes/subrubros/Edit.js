@@ -1,7 +1,9 @@
 import React from 'react';
 import { api } from './api';
 import { connect } from 'react-redux';
-import { message, Modal, Form, Input, Select, Row, Col, Divider, InputNumber } from 'antd';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Modal, Input, Select, Row, Col, Divider, InputNumber } from 'antd';
 import queryString from 'query-string';
 
 const Option = Select.Option;

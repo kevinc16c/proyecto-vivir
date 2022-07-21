@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { message, Table, Breadcrumb, Input, Select, Modal, Col, Row, Form, Divider, Tag } from 'antd';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { message, Table, Breadcrumb, Input, Select, Modal, Col, Row, Divider, Tag } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import { api } from './api';
 import moment from 'moment';

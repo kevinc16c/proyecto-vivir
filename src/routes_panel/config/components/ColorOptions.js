@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from 'antd';
+import { CheckCircleOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { changeColorOption } from 'actions/settings';
 
@@ -24,7 +24,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="11" checked={colorOption === '11'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-dark item-header"></span>
                 <span className="bg-white item-header"></span>
                 <span className="bg-dark"></span>
@@ -34,7 +34,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="12" checked={colorOption === '12'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-primary item-header"></span>
                 <span className="bg-white item-header"></span>
                 <span className="bg-dark"></span>
@@ -44,7 +44,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="13" checked={colorOption === '13'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-success item-header"></span>
                 <span className="bg-white item-header"></span>
                 <span className="bg-dark"></span>
@@ -54,7 +54,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="14" checked={colorOption === '14'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-info item-header"></span>
                 <span className="bg-white item-header"></span>
                 <span className="bg-dark"></span>
@@ -64,7 +64,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="15" checked={colorOption === '15'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-warning item-header"></span>
                 <span className="bg-white item-header"></span>
                 <span className="bg-dark"></span>
@@ -74,7 +74,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="16" checked={colorOption === '16'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-danger item-header"></span>
                 <span className="bg-white item-header"></span>
                 <span className="bg-dark"></span>
@@ -87,7 +87,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="21" checked={colorOption === '21'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-white item-header"></span>
                 <span className="bg-white item-header"></span>
                 <span className="bg-dark"></span>
@@ -97,7 +97,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="22" checked={colorOption === '22'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-primary item-header"></span>
                 <span className="bg-primary item-header"></span>
                 <span className="bg-dark"></span>
@@ -107,7 +107,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="23" checked={colorOption === '23'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-success item-header"></span>
                 <span className="bg-success item-header"></span>
                 <span className="bg-dark"></span>
@@ -117,7 +117,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="24" checked={colorOption === '24'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-info item-header"></span>
                 <span className="bg-info item-header"></span>
                 <span className="bg-dark"></span>
@@ -127,7 +127,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="25" checked={colorOption === '25'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-warning item-header"></span>
                 <span className="bg-warning item-header"></span>
                 <span className="bg-dark"></span>
@@ -137,7 +137,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="26" checked={colorOption === '26'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-danger item-header"></span>
                 <span className="bg-danger item-header"></span>
                 <span className="bg-dark"></span>
@@ -149,7 +149,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="31" checked={colorOption === '31'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-dark item-header"></span>
                 <span className="bg-dark item-header"></span>
                 <span className="bg-white"></span>
@@ -159,7 +159,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="32" checked={colorOption === '32'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-primary item-header"></span>
                 <span className="bg-primary item-header"></span>
                 <span className="bg-white"></span>
@@ -169,7 +169,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="33" checked={colorOption === '33'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-success item-header"></span>
                 <span className="bg-success item-header"></span>
                 <span className="bg-white"></span>
@@ -179,7 +179,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="34" checked={colorOption === '34'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-info item-header"></span>
                 <span className="bg-info item-header"></span>
                 <span className="bg-white"></span>
@@ -189,7 +189,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="35" checked={colorOption === '35'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-warning item-header"></span>
                 <span className="bg-warning item-header"></span>
                 <span className="bg-white"></span>
@@ -199,7 +199,7 @@ class ColorOptions extends React.Component {
             <label className="color-option-check">
               <input type="radio" name="color" value="36" checked={colorOption === '36'} onChange={this.onColorChange} />
               <span className="color-option-item bg-page">
-                <span className="overlay"><Icon type="check-circle" /></span>
+                <span className="overlay"><CheckCircleOutlined /></span>
                 <span className="bg-danger item-header"></span>
                 <span className="bg-danger item-header"></span>
                 <span className="bg-white"></span>
@@ -209,7 +209,7 @@ class ColorOptions extends React.Component {
           </div>
         </div>
       </section>
-    )
+    );
   }
 }
 

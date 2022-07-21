@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { PrinterOutlined, SearchOutlined } from '@ant-design/icons';
 import { message, Table, Breadcrumb, Input, Button, AutoComplete, Spin, Modal, Col, Row, Tabs, DatePicker, Result } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import queryString from 'query-string';
@@ -434,7 +435,7 @@ class Vehiculos extends React.Component {
 		const noHayResultadosLugares = typeof this.state.dataLugar === 'undefined'
 
 		return (
-			<div className="container-fluid no-breadcrumb">
+            <div className="container-fluid no-breadcrumb">
 				<QueueAnim type="bottom" className="ui-animate">
 					<Breadcrumb>
 						<Breadcrumb.Item>Inicio</Breadcrumb.Item>
@@ -455,7 +456,7 @@ class Vehiculos extends React.Component {
 										<Col style={{ float: 'right' }}>
 											<Button
 												type="primary"
-												icon="printer"
+												icon={<PrinterOutlined />}
 												onClick={() => this.pdfRegistroUsuarios()}
 											>
 												Imprimir
@@ -495,7 +496,7 @@ class Vehiculos extends React.Component {
 										<Col span={24}>
 											<Button
 												type="primary"
-												icon="search"
+												icon={<SearchOutlined />}
 												style={{ margin: 10, float: 'right' }}
 												onClick={() => this.filtrarUsuarios()}
 											>
@@ -528,7 +529,7 @@ class Vehiculos extends React.Component {
 										<Col style={{ float: 'right' }}>
 											<Button
 												type="primary"
-												icon="printer"
+												icon={<PrinterOutlined />}
 												onClick={() => this.pdfRegistroLugares()}
 											>
 												Imprimir
@@ -568,7 +569,7 @@ class Vehiculos extends React.Component {
 										<Col span={24}>
 											<Button
 												type="primary"
-												icon="search"
+												icon={<SearchOutlined />}
 												style={{ margin: 10, float: 'right' }}
 												onClick={() => this.filtrarLugares()}
 											>
@@ -600,7 +601,7 @@ class Vehiculos extends React.Component {
 					</div>
 				</QueueAnim>
 			</div>
-		);
+        );
 	}
 }
 
